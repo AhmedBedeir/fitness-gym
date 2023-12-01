@@ -1,5 +1,10 @@
 :root{
   --main-color: #FF2625;
+  --blue: #4F9E91;
+  --white:#EBE1C5;
+  --yellow: #EBCC6E;
+  --light-orange: #ED834E;
+  --black: #3D3A2C;
 }
 
 body {
@@ -13,7 +18,10 @@ body {
   box-sizing: border-box;
 
 }
-
+a {
+  text-decoration: none;
+  color: var(--black);
+}
 ::-webkit-scrollbar {
   width: 0px;
 }
@@ -108,6 +116,10 @@ body {
   width: 387px;
   height: 381px;
   text-decoration: none;
+}
+
+.active {
+  border-bottom: 3px solid var(--light-orange);
 }
 
 @media screen and (max-width:1200px) {
