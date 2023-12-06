@@ -9,7 +9,7 @@ function NavBar() {
       gap={{ xs: "40px", sm: "180px" }}
       sx={{
         alignItems: "center",
-        px: "80px",
+        px: { xs: "10px", sm: "40px", md: "80px" },
         pt: "20px",
       }}
     >
@@ -18,10 +18,10 @@ function NavBar() {
       </Link>
       <Stack
         direction="row"
-        spacing={6}
+        spacing={{xs: 2, sm: 4, md: 6}}
         sx={{
           alignItems: "flex-end",
-          fontSize: fontSz,
+          fontSize: {sm: fontSz, xs: "18px"},
         }}
       >
         <NavLink to="/" end>

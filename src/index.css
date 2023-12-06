@@ -1,22 +1,22 @@
-:root{
-  --main-color: #FF2625;
-  --blue: #4F9E91;
-  --white:#EBE1C5;
-  --yellow: #EBCC6E;
-  --light-orange: #ED834E;
-  --black: #3D3A2C;
+:root {
+  --main-color: #ff2625;
+  --blue: #4f9e91;
+  --white: #ebe1c5;
+  --yellow: #ebcc6e;
+  --light-orange: #ed834e;
+  --black: #3d3a2c;
 }
 
 body {
-  font-family: 'Josefin Sans';
+  font-family: "Josefin Sans";
   background-color: #FFFAFB;
+  /* background-color: var(--white); */
 }
 
 * {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
-
 }
 a {
   text-decoration: none;
@@ -71,8 +71,9 @@ a {
   top: 0px;
   width: 700px;
   height: 900px;
-  margin-top: -330px;
-
+  margin-top: -260px;
+  border-bottom-left-radius: 60px;
+  
 }
 
 .exercise-card {
@@ -105,8 +106,8 @@ a {
 }
 
 .search-btn:hover {
-  color: var(--main-color) !important;
-  border: 1px solid var(--main-color) !important;
+  color: var(--light-orange) !important;
+  border: 1px solid var(--light-orange) !important;
 }
 
 .exercise-video {
@@ -122,12 +123,11 @@ a {
   border-bottom: 3px solid var(--light-orange);
 }
 
-@media screen and (max-width:1200px) {
+@media screen and (max-width: 1200px) {
   .detail-image {
     width: 300px;
     height: 300px;
   }
-
 
   .react-horizontal-scrolling-menu--scroll-container {
     width: 500px;
@@ -150,10 +150,9 @@ a {
     width: 320px;
     height: 300px;
   }
-
 }
 
-@media screen and (max-width:400px) {
+@media screen and (max-width: 400px) {
   .exercise-card {
     width: 280px;
   }
