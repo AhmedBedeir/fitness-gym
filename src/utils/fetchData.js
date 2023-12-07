@@ -13,8 +13,7 @@ const fetchData = async (url = URL, options = OPTIONS) => {
     const result = await response.json();
     return result;
   } catch (error) {
-    console.error(error);
-    return error;
+    throw new Error(error);
   }
 };
 

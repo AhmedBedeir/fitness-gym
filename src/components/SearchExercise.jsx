@@ -6,7 +6,7 @@ import HorizontalScrollBar from "./HorizontalScrollBar";
 // eslint-disable-next-line react/prop-types
 function SearchExercise({ setExercise, bodyPart, setBodyPart }) {
   const [search, setSearch] = useState("");
-
+  const [error, setError] = useState("");
   const [bodyParts, setBodyParts] = useState([]);
 
   const handleSearch = async (e) => {
@@ -27,10 +27,14 @@ function SearchExercise({ setExercise, bodyPart, setBodyPart }) {
 
   useEffect(() => {
     const fetchBodyParts = async () => {
-      const data = await fetchData(
-        "https://exercisedb.p.rapidapi.com/exercises/bodyPartList"
-      );
-      setBodyParts(["all", ...data]);
+      try {
+        const data = await fetchData(
+          "https://exercisedb.p.rapidapi.com/exercises/bodyPartList"
+        );
+        setBodyParts(["all", ...data]);
+      } catch (e) {
+        setError(e.message);
+      }
     };
     fetchBodyParts();
   }, []);
@@ -91,6 +95,7 @@ function SearchExercise({ setExercise, bodyPart, setBodyPart }) {
         </Stack>
       </Box>
       <Box
+        mt="50px"
         sx={{
           width: "100%",
           p: "20px",
@@ -100,6 +105,7 @@ function SearchExercise({ setExercise, bodyPart, setBodyPart }) {
           data={bodyParts}
           bodyPart={bodyPart}
           setBodyPart={setBodyPart}
+          error={error}
         />
       </Box>
     </Stack>

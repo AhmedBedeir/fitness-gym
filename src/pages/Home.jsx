@@ -34,7 +34,11 @@ function Home() {
         bodyPart={bodyPart}
         setBodyPart={setBodyPart}
       />
-      <Exercise />
+      <Exercise
+        exercise={exercise}
+        bodyPart={bodyPart}
+        setBodyPart={setBodyPart}
+      />
     </Box>
   );
 }
