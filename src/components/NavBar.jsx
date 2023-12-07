@@ -18,16 +18,16 @@ function NavBar() {
       </Link>
       <Stack
         direction="row"
-        spacing={{xs: 2, sm: 4, md: 6}}
+        spacing={{ xs: 2, sm: 4, md: 6 }}
         sx={{
           alignItems: "flex-end",
-          fontSize: {sm: fontSz, xs: "18px"},
+          fontSize: { sm: fontSz, xs: "18px" },
         }}
       >
         <NavLink to="/" end>
           Home
         </NavLink>
-        <NavLink to="/exercise/1">Exercise</NavLink>
+        <a href="#exercise">Exercise</a>
       </Stack>
     </Stack>
   );

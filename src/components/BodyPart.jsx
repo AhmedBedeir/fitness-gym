@@ -4,7 +4,7 @@ import { Stack, Typography } from "@mui/material";
 function BodyPart({ title, bodyPart, setBodyPart }) {
   return (
     <Stack
-      // className="bodyPart-card"
+      className="bodyPart-card"
       justifyContent="center"
       alignItems="center"
       type="button"

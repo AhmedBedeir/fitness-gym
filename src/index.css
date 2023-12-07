@@ -9,8 +9,12 @@
 
 body {
   font-family: "Josefin Sans";
-  background-color: #FFFAFB;
+  background-color: #fffafb;
   /* background-color: var(--white); */
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 * {
@@ -73,7 +77,6 @@ a {
   height: 900px;
   margin-top: -260px;
   border-bottom-left-radius: 60px;
-  
 }
 
 .exercise-card {
