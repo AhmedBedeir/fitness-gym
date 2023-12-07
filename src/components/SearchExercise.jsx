@@ -21,7 +21,6 @@ function SearchExercise({ setExercise, bodyPart, setBodyPart }) {
           item.target.toLowerCase().includes(search)
       );
       setExercise(searchedExercise);
-      console.log(searchedExercise);
     }
   };
 
@@ -89,6 +88,7 @@ function SearchExercise({ setExercise, bodyPart, setBodyPart }) {
               width: { lg: "175px", xs: "100px" },
               height: "48px",
             }}
+            type="submit"
           >
             Search
           </Button>

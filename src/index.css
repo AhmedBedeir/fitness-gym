@@ -81,10 +81,10 @@ a {
 
 .exercise-card {
   width: 400px;
-  height: 445px;
-  background: #fff;
-  border-top: 4px solid var(--main-color);
-  border-bottom-left-radius: 20px;
+  /* height: 445px; */
+  background: var(--white);
+  border-top: 4px solid var(--light-orange);
+  /* border-bottom-left-radius: 20px; */
   text-decoration: none;
   display: flex;
   justify-content: space-between;
@@ -103,9 +103,9 @@ a {
   transition: 0.3s all ease-in-out;
 }
 
-.exercise-card:hover,
+
 .bodyPart-card:hover {
-  transform: scale(1.1, 1.1);
+  transform: scale(1.08, 1.08);
 }
 
 .search-btn:hover {

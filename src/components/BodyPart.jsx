@@ -18,7 +18,10 @@ function BodyPart({ title, bodyPart, setBodyPart }) {
         cursor: "pointer",
         gap: "47px",
       }}
-      onClick={() => setBodyPart(title)}
+      onClick={() => {
+        setBodyPart(title);
+        window.scrollTo({ top: 1480, behavior: "smooth" });
+      }}
     >
       <img
         src="/dumbbell.png"
