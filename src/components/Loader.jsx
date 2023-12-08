@@ -1,14 +1,16 @@
 /* eslint-disable react/prop-types */
+import { Box } from "@mui/material";
 import PuffLoader from "react-spinners/PuffLoader";
 
 function Loader({ style }) {
   return (
-    <PuffLoader
-      color="var(--light-orange)"
-      style={{
+    <Box
+      sx={{
         ...style,
       }}
-    />
+    >
+      <PuffLoader color="var(--light-orange)" />
+    </Box>
   );
 }
 

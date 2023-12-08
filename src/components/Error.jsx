@@ -6,12 +6,11 @@ function Error() {
       sx={{
         width: "90%",
         maxWidth: "1170px",
-        margin: "0 auto",
+        margin: "35px auto",
       }}
     >
       <Alert
         severity="error"
-        mt="35px"
         sx={{
           fontSize: "18px",
           alignItems: "center",

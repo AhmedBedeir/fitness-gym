@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { fetchData } from "../utils/fetchData";
 import Error from "../components/Error";
 import Loader from "../components/Loader";
+import { Container } from "@mui/material";
 const Detail = React.lazy(() => import("../components/Detail"));
 const ExerciseVideos = React.lazy(() => import("../components/ExerciseVideos"));
 const SimilarExercises = React.lazy(() =>
@@ -32,21 +33,34 @@ function ExerciseDetail() {
   if (error) {
     return <Error />;
   }
-  if (loading) {
-    return <Loader />;
+  if (!loading) {
+    return <Loader 
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+      }}
+    />;
   }
   return (
-    <div>
-      <Suspense fallback={<div>Loading...</div>}>
+    <Container
+      maxWidth="xl"
+      sx={{
+        mt: "50px",
+        mb: "50px",
+      }}
+    >
+      <Suspense>
         <Detail detail={exerciseDetail} />
       </Suspense>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense>
         <ExerciseVideos id={id} />
       </Suspense>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense>
         <SimilarExercises id={id} />
       </Suspense>
-    </div>
+    </Container>
   );
 }
 
