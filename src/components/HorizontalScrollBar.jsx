@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import { Typography } from "@mui/material";
 import BodyPart from "./BodyPart";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -7,16 +6,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Mousewheel, Pagination } from "swiper/modules";
+import Error from "./Error";
 
 function HorizontalScrollBar({ data, bodyPart, setBodyPart, error }) {
   if (error.length > 0) {
-    return (
-      <Typography variant="h6" color="error" textAlign={"center"} mt="35px">
-        Something went wrong.👀
-        <br />
-        Please try again later.
-      </Typography>
-    );
+    return <Error />;
   }
 
   return (
@@ -25,7 +19,6 @@ function HorizontalScrollBar({ data, bodyPart, setBodyPart, error }) {
         pagination={{
           clickable: true,
         }}
-        
         mousewheel={true}
         modules={[Mousewheel, Pagination]}
         breakpoints={{
@@ -52,7 +45,6 @@ function HorizontalScrollBar({ data, bodyPart, setBodyPart, error }) {
         }}
         style={{
           "--swiper-pagination-color": "var(--light-orange)",
-
         }}
       >
         {data.map((itm) => (
