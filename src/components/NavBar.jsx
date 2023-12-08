@@ -1,7 +1,21 @@
 import { Stack } from "@mui/material";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 const fontSz = "20px";
 function NavBar() {
+  const history = useNavigate();
+  const handleExerciseLinkClick = () => {
+    // Navigate to the home page
+    history("/");
+
+    // Wait for the next tick to ensure the navigation has occurred
+    setTimeout(() => {
+      // Scroll to the #exercise section
+      const exerciseSection = document.getElementById("exercise");
+      if (exerciseSection) {
+        exerciseSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 0);
+  };
   return (
     <Stack
       margin="auto"
@@ -27,7 +41,9 @@ function NavBar() {
         <NavLink to="/" end>
           Home
         </NavLink>
-        <a href="#exercise">Exercise</a>
+        <a href="#exercise" onClick={handleExerciseLinkClick}>
+          Exercise
+        </a>
       </Stack>
     </Stack>
   );
