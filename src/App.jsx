@@ -7,8 +7,18 @@ function App() {
   return (
     <>
       <NavBar />
-      <Outlet />
-      <Footer />
+      <div
+        className="container"
+        style={{
+          minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+        }}
+      >
+        <Outlet />
+        <Footer />
+      </div>
     </>
   );
 }
