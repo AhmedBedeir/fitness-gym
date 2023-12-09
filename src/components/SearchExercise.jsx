@@ -106,6 +106,7 @@ function SearchExercise({ setExercise, bodyPart, setBodyPart }) {
           bodyPart={bodyPart}
           setBodyPart={setBodyPart}
           error={error}
+          isBodyPart={true}
         />
       </Box>
     </Stack>

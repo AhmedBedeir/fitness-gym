@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import BodyPart from "./BodyPart";
+import ExerciseCard from "./ExerciseCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -8,11 +9,16 @@ import "swiper/css/pagination";
 import { Mousewheel, Pagination } from "swiper/modules";
 import Error from "./Error";
 
-function HorizontalScrollBar({ data, bodyPart, setBodyPart, error }) {
+function HorizontalScrollBar({
+  data,
+  bodyPart,
+  setBodyPart,
+  error="",
+  isBodyPart,
+}) {
   if (error.length > 0) {
     return <Error />;
   }
-
   return (
     <div>
       <Swiper
@@ -40,7 +46,7 @@ function HorizontalScrollBar({ data, bodyPart, setBodyPart, error }) {
           // when window width is >= 1024px
           1024: {
             slidesPerView: 4,
-            spaceBetween: 30,
+            spaceBetween: 50,
           },
         }}
         style={{
@@ -49,22 +55,17 @@ function HorizontalScrollBar({ data, bodyPart, setBodyPart, error }) {
       >
         {data.map((itm) => (
           <SwiperSlide key={itm.id || itm}>
-            <BodyPart
-              title={itm}
-              bodyPart={bodyPart}
-              setBodyPart={setBodyPart}
-            />
+            {isBodyPart ? (
+              <BodyPart
+                title={itm}
+                bodyPart={bodyPart}
+                setBodyPart={setBodyPart}
+              />
+            ) : (
+              <ExerciseCard exercise={itm} width="370px"/>
+            )}
           </SwiperSlide>
         ))}
-        {/* {data.map((itm) => (
-          <Box key={itm.id} title={itm.id} m="0 10px">
-            <BodyPart
-              title={itm}
-              bodyPart={bodyPart}
-              setBodyPart={setBodyPart}
-            />
-          </Box>
-        ))} */}
       </Swiper>
     </div>
   );

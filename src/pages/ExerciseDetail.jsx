@@ -5,7 +5,7 @@ import Error from "../components/Error";
 import Loader from "../components/Loader";
 import { Container } from "@mui/material";
 const Detail = React.lazy(() => import("../components/Detail"));
-const ExerciseVideos = React.lazy(() => import("../components/ExerciseVideos"));
+// const ExerciseVideos = React.lazy(() => import("../components/ExerciseVideos"));
 const SimilarExercises = React.lazy(() =>
   import("../components/SimilarExercises")
 );
@@ -15,6 +15,7 @@ function ExerciseDetail() {
   const [error, setError] = useState(false);
   const [exerciseDetail, setExerciseDetail] = useState({});
   const { id } = useParams();
+  console.log(exerciseDetail);
   useEffect(() => {
     const getExerciseDetail = async () => {
       try {
@@ -33,33 +34,36 @@ function ExerciseDetail() {
   if (error) {
     return <Error />;
   }
-  if (!loading) {
-    return <Loader 
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-      }}
-    />;
+  if (loading) {
+    return (
+      <Loader
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      />
+    );
   }
   return (
-    <Container
-      maxWidth="xl"
-      sx={{
-        mt: "50px",
-        mb: "50px",
-      }}
-    >
+    <Container maxWidth="xl">
       <Suspense>
         <Detail detail={exerciseDetail} />
       </Suspense>
-      <Suspense>
-        <ExerciseVideos id={id} />
-      </Suspense>
-      <Suspense>
-        <SimilarExercises id={id} />
-      </Suspense>
+      {/* {exerciseDetail?.name && (
+        <Suspense>
+          <ExerciseVideos id={id} name={exerciseDetail.name} />
+        </Suspense>
+      )} */}
+      {exerciseDetail?.target && (
+        <Suspense>
+          <SimilarExercises
+            target={exerciseDetail?.target}
+            equipment={exerciseDetail?.equipment}
+          />
+        </Suspense>
+      )}
     </Container>
   );
 }

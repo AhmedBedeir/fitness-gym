@@ -80,8 +80,8 @@ a {
 }
 
 .exercise-card {
-  width: 400px;
-  /* height: 445px; */
+  /* width: 380px; */
+  height: 445px;
   background: var(--white);
   border-top: 4px solid var(--light-orange);
   /* border-bottom-left-radius: 20px; */

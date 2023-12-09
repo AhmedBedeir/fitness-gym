@@ -2,9 +2,18 @@
 import { Chip, Stack, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 
-function ExerciseCard({ exercise }) {
+function ExerciseCard({ exercise, width="400px" }) {
   return (
-    <Link to={`/exercise/${exercise.id}`} className="exercise-card">
+    <Link
+      to={`/exercise/${exercise.id}`}
+      onClick={() => {
+        window.scrollTo(0, 0, "smooth");
+      }}
+      style={{
+        width: width,
+      }}
+      className="exercise-card"
+    >
       <img src={exercise.gifUrl} alt={exercise.name} loading="lazy" />
       <Stack direction={"row"} gap={"10px"} mt={"10px"} ml={"10px"}>
         <Chip

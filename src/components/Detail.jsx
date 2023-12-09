@@ -25,12 +25,24 @@ function Detail({ detail }) {
       p="20px"
       alignItems={"center"}
     >
-      <img src={gifUrl} alt={name} loading="lazy" className="detail-image" />
-      <Stack direction={"column"} gap={{ xs: "20px", sm: "35px" }}>
+      
+      <img
+        src={gifUrl}
+        alt={name}
+        style={{flex: 1, borderRadius: "10px"}}
+        loading="lazy"
+        className="detail-image animate__animated animate__slideInLeft"
+      />
+      <Stack
+        direction={"column"}
+        gap={{ xs: "20px", sm: "35px" }}
+        flex={1}
+      >
         <Typography
           variant="h4"
           sx={{
             fontWeight: "bold",
+            textTransform: "capitalize",
           }}
         >
           {name} ({bodyPart})
