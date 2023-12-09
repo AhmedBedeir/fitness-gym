@@ -4,11 +4,12 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import ExerciseDetail from "./pages/ExerciseDetail.jsx";
+import P404 from "./components/P404.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    errorElement: <h1>Not Found</h1>,
+    errorElement: <P404 />,
     element: <App />,
     children: [
       {

@@ -1,5 +1,12 @@
 import { useEffect, useState } from "react";
-import { Box, Button, Stack, TextField, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Stack,
+  TextField,
+  Typography,
+  CircularProgress,
+} from "@mui/material";
 import { fetchData } from "../utils/fetchData";
 import HorizontalScrollBar from "./HorizontalScrollBar";
 
@@ -7,20 +14,34 @@ import HorizontalScrollBar from "./HorizontalScrollBar";
 function SearchExercise({ setExercise, bodyPart, setBodyPart }) {
   const [search, setSearch] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const [bodyParts, setBodyParts] = useState([]);
 
   const handleSearch = async (e) => {
     e.preventDefault();
+    // if (search.length > 2) {
+    //   const data = await fetchData();
+    //   const searchedExercise = data.filter(
+    //     (item) =>
+    //       item.name.toLowerCase().includes(search) ||
+    //       item.bodyPart.toLowerCase().includes(search) ||
+    //       item.equipment.toLowerCase().includes(search) ||
+    //       item.target.toLowerCase().includes(search)
+    //   );
+    //   setExercise(searchedExercise);
+    // }
     if (search.length > 2) {
-      const data = await fetchData();
-      const searchedExercise = data.filter(
-        (item) =>
-          item.name.toLowerCase().includes(search) ||
-          item.bodyPart.toLowerCase().includes(search) ||
-          item.equipment.toLowerCase().includes(search) ||
-          item.target.toLowerCase().includes(search)
-      );
-      setExercise(searchedExercise);
+      setLoading(true);
+      try {
+        const data = await fetchData(
+          `https://exercisedb.p.rapidapi.com/exercises/name/${search}`
+        );
+        setExercise(data);
+        setLoading(false);
+      } catch (e) {
+        setError(e.message);
+        setLoading(false);
+      }
     }
   };
 
@@ -80,6 +101,8 @@ function SearchExercise({ setExercise, bodyPart, setBodyPart }) {
           />
           <Button
             className="search-btn"
+            disabled={loading}
+            endIcon={loading && <CircularProgress size={20} />}
             sx={{
               bgcolor: "var(--light-orange)",
               color: "var(--white)",
