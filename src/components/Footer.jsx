@@ -12,7 +12,7 @@ function Footer() {
         padding: "30px",
       }}
     >
-      <img src="/logo.svg" alt="logo" />
+      <img src="/fitness-gym/logo.svg" alt="logo" />
       <Typography
         style={{ color: "var(--black)", fontWeight: "bold" }}
         mt="10px"
@@ -32,7 +32,6 @@ function Footer() {
           Bedeir
         </a>
       </Typography>
-      
     </Box>
   );
 }

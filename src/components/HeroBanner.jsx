@@ -67,7 +67,7 @@ function HeroBanner() {
         className="animate__animated animate__fadeInDown"
       >
         <img
-          src="/hero.jpg"
+          src="/fitness-gym/hero.jpg"
           alt="hero-banner"
           style={{
             width: "70%",

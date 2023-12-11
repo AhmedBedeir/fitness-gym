@@ -24,7 +24,7 @@ function BodyPart({ title, bodyPart, setBodyPart }) {
       }}
     >
       <img
-        src="/dumbbell.png"
+        src="/fitness-gym/dumbbell.png"
         alt="body part"
         style={{ width: "40px", height: "40px" }}
       />
