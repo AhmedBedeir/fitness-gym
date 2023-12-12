@@ -13,7 +13,7 @@ function HorizontalScrollBar({
   data,
   bodyPart,
   setBodyPart,
-  error="",
+  error = "",
   isBodyPart,
 }) {
   if (error.length > 0) {
@@ -53,7 +53,7 @@ function HorizontalScrollBar({
           "--swiper-pagination-color": "var(--light-orange)",
         }}
       >
-        {data.map((itm) => (
+        {data.slice(0, 12).map((itm) => (
           <SwiperSlide key={itm.id || itm}>
             {isBodyPart ? (
               <BodyPart
@@ -62,7 +62,7 @@ function HorizontalScrollBar({
                 setBodyPart={setBodyPart}
               />
             ) : (
-              <ExerciseCard exercise={itm} width="370px"/>
+              <ExerciseCard exercise={itm} width="370px" />
             )}
           </SwiperSlide>
         ))}
