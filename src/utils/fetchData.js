@@ -1,6 +1,5 @@
 const URL = "https://exercisedb.p.rapidapi.com/exercises";
 const youtubeSearchUrl = "https://youtube-search-and-download.p.rapidapi.com";
-console.log(import.meta.env.VITE_RAPID_KEY);
 const OPTIONS = {
   method: "GET",
   headers: {

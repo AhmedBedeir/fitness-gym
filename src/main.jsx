@@ -24,10 +24,7 @@ const router = createBrowserRouter(
         },
       ],
     },
-  ],
-  {
-    basename: "/fitness-gym/",
-  }
+  ]
 );
 ReactDOM.createRoot(document.getElementById("root")).render(
   <RouterProvider router={router} />

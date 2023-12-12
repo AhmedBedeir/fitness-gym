@@ -9,8 +9,6 @@ function SimilarExercises({ target, equipment }) {
   const [similarEquipment, setSimilarEquipment] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  console.log(similarEquipment);
-  console.log(similarTarget);
 
   useEffect(() => {
     const getSimilarTarget = async () => {

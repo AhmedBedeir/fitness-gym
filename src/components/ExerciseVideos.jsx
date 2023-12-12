@@ -12,7 +12,6 @@ function ExerciseVideos({ name }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [exerciseVideos, setExerciseVideos] = useState([]);
-  console.log(exerciseVideos);
   useEffect(() => {
     const getVideos = async () => {
       try {

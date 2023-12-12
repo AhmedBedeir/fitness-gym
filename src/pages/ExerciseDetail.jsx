@@ -15,7 +15,6 @@ function ExerciseDetail() {
   const [error, setError] = useState(false);
   const [exerciseDetail, setExerciseDetail] = useState({});
   const { id } = useParams();
-  console.log(exerciseDetail);
   useEffect(() => {
     const getExerciseDetail = async () => {
       try {

@@ -28,7 +28,7 @@ function NavBar() {
       }}
     >
       <Link to="/">
-        <img src="/fitness-gym/logo.svg" alt="logo" />
+        <img src="/logo.svg" alt="logo" />
       </Link>
       <Stack
         direction="row"

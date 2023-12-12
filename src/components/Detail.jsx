@@ -7,15 +7,15 @@ function Detail({ detail }) {
   const extraDetail = [
     {
       name: bodyPart,
-      icon: "/fitness-gym/arm.png",
+      icon: "/arm.png",
     },
     {
       name: target,
-      icon: "/fitness-gym/dumbbell.png",
+      icon: "/dumbbell.png",
     },
     {
       name: equipment,
-      icon: "/fitness-gym/equipment.png",
+      icon: "/equipment.png",
     },
   ];
   return (

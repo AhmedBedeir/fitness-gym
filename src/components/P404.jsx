@@ -14,7 +14,7 @@ function P404() {
       }}
     >
       <img
-        src="/fitness-gym/404.png"
+        src="/404.png"
         alt="404"
         style={{
           width: "100%",
