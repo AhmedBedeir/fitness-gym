@@ -2,6 +2,7 @@
   "name": "fitness-gym",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://github.com/AhmedBedeir/fitness-gym",
   "type": "module",
   "scripts": {
     "dev": "vite",
